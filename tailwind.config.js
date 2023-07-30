@@ -6,6 +6,9 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        primary: '#49a360'
+      },
       fontFamily: {
         sans: ['var(--font-inter)']
       },
