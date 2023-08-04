@@ -1,19 +1,17 @@
 import Cart from 'components/cart';
 import OpenCart from 'components/cart/open-cart';
-import LogoSquare from 'components/logo-square';
+import Logo from 'components/icons/logo';
 import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
-import Search from './search';
-const { SITE_NAME } = process.env;
 
 export default async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
   return (
-    <nav className="relative flex items-center justify-between p-4 lg:px-6">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-neutral-100 p-4 dark:bg-neutral-900 lg:px-6">
       <div className="block flex-none md:hidden">
         <MobileMenu menu={menu} />
       </div>
@@ -24,10 +22,7 @@ export default async function Navbar() {
             aria-label="Go back home"
             className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
           >
-            <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-              {SITE_NAME}
-            </div>
+            <Logo />
           </Link>
           {menu.length ? (
             <ul className="hidden text-sm md:flex md:items-center">
@@ -44,9 +39,8 @@ export default async function Navbar() {
             </ul>
           ) : null}
         </div>
-        <div className="hidden justify-center md:flex md:w-1/3">
-          <Search />
-        </div>
+        <div className="hidden justify-center md:flex md:w-1/3" />
+
         <div className="flex justify-end md:w-1/3">
           <Suspense fallback={<OpenCart />}>
             <Cart />
