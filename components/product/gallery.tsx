@@ -31,7 +31,7 @@ export function Gallery({
     if (autoPlay) {
       const interval = setInterval(() => {
         handleNavigate('next');
-      }, 1000);
+      }, 3000);
 
       return () => clearInterval(interval);
     }
