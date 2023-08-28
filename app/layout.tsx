@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from 'components/layout/navbar';
 import WhatsAppFabButton from 'components/whats-app-fab-button';
 import { ensureStartsWith } from 'lib/utils';
@@ -47,6 +48,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <main>{children}</main>
         </Suspense>
         <WhatsAppFabButton />
+        <Analytics />
       </body>
     </html>
   );
