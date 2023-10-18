@@ -6,8 +6,9 @@ import { getProducts } from 'lib/shopify';
 export const runtime = 'edge';
 
 export const metadata = {
-  title: 'Search',
-  description: 'Search for products in the store.'
+  title: 'Buscar',
+  description:
+    'Pets Giant Juguetes Masticables a base de productos cárnicos. Naturales y seguros para sus hijos. Pet treats en Costa Rica para todo perro.'
 };
 
 export default async function SearchPage({
